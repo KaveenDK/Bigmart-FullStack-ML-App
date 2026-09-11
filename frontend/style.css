@@ -1,0 +1,129 @@
+:root {
+  --bg: #F7F7F2;
+  --card: #FFFFFF;
+  --ink: #1E2420;
+  --muted: #6B7368;
+  --green: #1F6F54;
+  --green-dark: #17543F;
+  --amber: #E8A33D;
+  --border: #E3E1D8;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+}
+
+.intro { margin-bottom: 28px; }
+
+.eyebrow {
+  color: var(--green);
+  font-weight: 600;
+  font-size: 13px;
+  margin: 0 0 8px;
+}
+
+h1 {
+  font-size: 30px;
+  margin: 0 0 10px;
+}
+
+.sub {
+  color: var(--muted);
+  margin: 0;
+  max-width: 52ch;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 16px;
+}
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+
+label { font-size: 13px; font-weight: 600; }
+
+input, select {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fff;
+  color: var(--ink);
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(31, 111, 84, 0.15);
+}
+
+button#predict-btn {
+  margin-top: 24px;
+  width: 100%;
+  padding: 13px;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button#predict-btn:hover { background: var(--green-dark); }
+button#predict-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.status {
+  min-height: 18px;
+  font-size: 13px;
+  color: var(--muted);
+  margin: 10px 0 0;
+}
+
+.result {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 8px;
+  background: #FBF3E4;
+  border: 1px solid var(--amber);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.result.hidden { display: none; }
+
+.result-label { font-size: 13px; color: var(--muted); }
+.result-value { font-size: 22px; font-weight: 700; color: var(--green-dark); }
+
+.note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+@media (max-width: 520px) {
+  .grid { grid-template-columns: 1fr; }
+}

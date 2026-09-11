@@ -1,0 +1,24 @@
+# ---- Python ----
+venv/
+__pycache__/
+*.pyc
+.env
+
+# ---- Node (only needed if someone switches to a React frontend) ----
+node_modules/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- Editor ----
+.vscode/
+.idea/
+
+# ---- Model files ----
+# Big Mart models are usually small, so they're tracked by default.
+# If yours gets too big for GitHub, uncomment the line below:
+# backend/model/*.joblib

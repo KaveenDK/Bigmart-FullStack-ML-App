@@ -5,11 +5,11 @@ Big Mart store, based on details about the product and the outlet.
 
 ## Team
 
-| Member  | Role                                                  |
-|---------|-------------------------------------------------------|
-| Ahasna  | Data & Machine Learning Engineer                      |
-| KaveeN  | Backend Developer, ML Integration & GitHub Lead        |
-| Prasadi | Frontend Developer & Documentation Lead                |
+| Member  | Role                                            |
+| ------- | ----------------------------------------------- |
+| Ahasna  | Data & Machine Learning Engineer                |
+| KaveeN  | Backend Developer, ML Integration & GitHub Lead |
+| Prasadi | Frontend Developer & Documentation Lead         |
 
 ## Dataset
 
@@ -63,7 +63,3 @@ Code's "Live Server"). Make sure the backend is running first.
 - [ ] Backend `/predict` endpoint connected to the real model
 - [ ] Frontend connected to backend
 - [ ] Report written
-
-## Deadline
-
-**18th September** — no extensions.

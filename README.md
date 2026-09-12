@@ -1,65 +1,114 @@
-# Big Mart Sales Prediction System
+# 🛒 Big Mart Sales Prediction System
 
-A Machine Learning web app that predicts how much a product will sell at a
-Big Mart store, based on details about the product and the outlet.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 
-## Team
+An end-to-end Machine Learning web application designed to predict the sales volume of products at Big Mart outlets. This project demonstrates the complete ML lifecycle—from Exploratory Data Analysis (EDA) and Feature Engineering to Model Deployment via a REST API and a modern frontend interface.
 
-| Member  | Role                                            |
-| ------- | ----------------------------------------------- |
-| Ahasna  | Data & Machine Learning Engineer                |
-| KaveeN  | Backend Developer, ML Integration & GitHub Lead |
-| Prasadi | Frontend Developer & Documentation Lead         |
+> **Note:** This project was developed as the Final Group Assignment for the Machine Learning Module.
 
-## Dataset
+---
 
-[Big Mart Sales Prediction](https://www.kaggle.com/datasets/shivan118/big-mart-sales-prediction-datasets) (Kaggle)
-Target variable: `Item_Outlet_Sales`
+## 🏗️ Architecture & Data Flow
 
-## Architecture
+The system follows a decoupled, full-stack micro-architecture:
 
-```
-User -> Frontend -> Backend REST API -> ML Prediction Service -> Trained ML Model -> Prediction Result -> Frontend
-```
-
-## Project Structure
+```mermaid
+flowchart LR
+    UI[Client / React UI] -->|JSON Payload| API[Flask REST API]
+    API --> DP[Data Preprocessing]
+    DP --> ML[ML Model: Random Forest]
+    ML -->|Predicted Sales JSON| UI
 
 ```
+
+## 🛠️ Tech Stack
+
+- **Machine Learning:** Python, Pandas, Scikit-Learn, Joblib
+- **Backend API:** Flask, Flask-CORS
+- **Frontend:** React.js, Vite, HTML5/CSS3
+- **Dataset:** [Big Mart Sales Prediction (Kaggle)](https://www.kaggle.com/datasets/shivan118/big-mart-sales-prediction-datasets)
+
+---
+
+## 📂 Repository Structure
+
+```text
 big-mart-sales-prediction/
-├── data/         Train.csv / Test.csv go here (see data/README.md)
-├── ml/           EDA + model training notebook          (Ahasna)
-├── backend/      Flask API that serves predictions       (KaveeN)
-├── frontend/     HTML / CSS / JS user interface          (Prasadi)
-└── docs/         Final project report
+├── data/           # Raw and processed datasets (Train.csv / Test.csv)
+├── ml/             # Jupyter notebooks for EDA, Feature Engineering & Model Training
+├── backend/        # Python/Flask REST API serving the ML model
+├── frontend/       # React (Vite) application for the user interface
+└── docs/           # Final project report and academic documentation
+
 ```
 
-## How to Run
+---
 
-### 1. Backend
+## 🚀 Getting Started (Local Development)
+
+To run this project locally, you need to start both the Backend API and the Frontend Server.
+
+### 1. Start the Backend API (Flask)
+
+The backend loads the trained `.joblib` models and serves the `/predict` endpoint.
 
 ```bash
 cd backend
-python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
+
+# Create and activate a virtual environment
+py -m venv venv
+venv\Scripts\activate      # Windows (Use `source venv/bin/activate` for Mac/Linux)
+
+# Install dependencies
 pip install -r requirements.txt
-python app.py
+
+# Run the server
+py app.py
+
 ```
 
-The API starts at `http://localhost:5000`. It works with a placeholder
-prediction even before the real model is added, so the frontend can be
-tested from Day 1.
+_The API will be running at: `http://127.0.0.1:5000_`
 
-### 2. Frontend
+### 2. Start the Frontend Application (React)
 
-Open `frontend/index.html` in your browser (or use an extension like VS
-Code's "Live Server"). Make sure the backend is running first.
+Open a **new terminal tab/window**, and run the React app.
 
-## Status
+```bash
+cd frontend
 
-- [ ] Dataset explored (EDA)
-- [ ] Feature engineering complete (5–6 techniques)
-- [ ] Models trained & compared
-- [ ] Best model saved (`model.joblib`)
-- [ ] Backend `/predict` endpoint connected to the real model
-- [ ] Frontend connected to backend
-- [ ] Report written
+# Install Node modules
+npm install
+
+# Start the development server
+npm run dev
+
+```
+
+_The frontend will provide a local URL (e.g., `http://localhost:5173`) to view the web app._
+
+---
+
+## 👥 Team & Contributions
+
+This project was developed collaboratively, with each member managing a specific domain of the full-stack ML pipeline:
+
+| Member      | Role                  | Key Responsibilities                                                                                               |
+| ----------- | --------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **Ahasna**  | Data & ML Engineer    | EDA, Data cleaning, Feature Engineering (Handling missing values, Encoding, Scaling), Model training & evaluation. |
+| **KaveeN**  | Backend & GitHub Lead | GitHub repository management, Flask API development, Data preparation pipeline, ML model integration, API testing. |
+| **Prasadi** | Frontend & Docs Lead  | React UI development, API consumption, state management, Final project report, and documentation.                  |
+
+---
+
+## ✅ Project Status (Completed)
+
+- [x] Dataset explored and cleaned (EDA)
+- [x] Feature engineering complete (Missing values, Encoding, Scaling, Outlier Treatment)
+- [x] ML Models trained, evaluated, and compared (Random Forest selected)
+- [x] Best model, scalers, and encoders exported as `.joblib`
+- [x] Backend `/predict` endpoint successfully connected to the ML model
+- [x] React frontend fully integrated with the Flask backend
+- [x] Final academic report and documentation written

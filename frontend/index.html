@@ -1,113 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Big Mart Sales Predictor</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <main class="wrap">
-    <header class="intro">
-      <p class="eyebrow">Big Mart Sales Prediction</p>
-      <h1>Estimate a product's sales</h1>
-      <p class="sub">Fill in the product and outlet details below to get a predicted sales figure from the trained model.</p>
-    </header>
-
-    <form id="predict-form" class="card">
-      <div class="grid">
-        <div class="field">
-          <label for="item_weight">Item Weight (kg)</label>
-          <input type="number" step="0.01" id="item_weight" required placeholder="e.g. 12.5">
-        </div>
-
-        <div class="field">
-          <label for="item_fat_content">Item Fat Content</label>
-          <select id="item_fat_content" required>
-            <option value="Low Fat">Low Fat</option>
-            <option value="Regular">Regular</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="item_visibility">Item Visibility</label>
-          <input type="number" step="0.001" min="0" max="1" id="item_visibility" required placeholder="e.g. 0.05">
-        </div>
-
-        <div class="field">
-          <label for="item_type">Item Type</label>
-          <select id="item_type" required>
-            <option>Dairy</option>
-            <option>Soft Drinks</option>
-            <option>Meat</option>
-            <option>Fruits and Vegetables</option>
-            <option>Household</option>
-            <option>Baking Goods</option>
-            <option>Snack Foods</option>
-            <option>Frozen Foods</option>
-            <option>Breakfast</option>
-            <option>Health and Hygiene</option>
-            <option>Hard Drinks</option>
-            <option>Canned</option>
-            <option>Breads</option>
-            <option>Starchy Foods</option>
-            <option>Others</option>
-            <option>Seafood</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="item_mrp">Item MRP (price)</label>
-          <input type="number" step="0.01" id="item_mrp" required placeholder="e.g. 141.60">
-        </div>
-
-        <div class="field">
-          <label for="outlet_establishment_year">Outlet Establishment Year</label>
-          <input type="number" id="outlet_establishment_year" required placeholder="e.g. 1999">
-        </div>
-
-        <div class="field">
-          <label for="outlet_size">Outlet Size</label>
-          <select id="outlet_size" required>
-            <option value="Small">Small</option>
-            <option value="Medium">Medium</option>
-            <option value="High">High</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="outlet_location_type">Outlet Location Type</label>
-          <select id="outlet_location_type" required>
-            <option value="Tier 1">Tier 1</option>
-            <option value="Tier 2">Tier 2</option>
-            <option value="Tier 3">Tier 3</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="outlet_type">Outlet Type</label>
-          <select id="outlet_type" required>
-            <option value="Grocery Store">Grocery Store</option>
-            <option value="Supermarket Type1">Supermarket Type1</option>
-            <option value="Supermarket Type2">Supermarket Type2</option>
-            <option value="Supermarket Type3">Supermarket Type3</option>
-          </select>
-        </div>
-      </div>
-
-      <button type="submit" id="predict-btn">Predict Sales</button>
-
-      <p id="status" class="status" aria-live="polite"></p>
-
-      <div id="result" class="result hidden">
-        <span class="result-label">Predicted Sales</span>
-        <span class="result-value" id="result-value">—</span>
-      </div>
-    </form>
-
-    <p class="note">Starter frontend, wired up to match the backend's <code>/predict</code> endpoint — restyle freely.</p>
-  </main>
-
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Big Mart Sales Predictor</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
